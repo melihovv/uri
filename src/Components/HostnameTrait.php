@@ -138,7 +138,7 @@ trait HostnameTrait
      */
     protected function isValidContent(array $data)
     {
-        if (count(preg_grep('/^[0-9a-z]([0-9a-z-]{0,61}[0-9a-z])?$/i', $data, PREG_GREP_INVERT))) {
+        if (count(preg_grep('/^[0-9a-z]([0-9a-z-_]{0,61}[0-9a-z])?$/i', $data, PREG_GREP_INVERT))) {
             throw new InvalidArgumentException('Invalid Hostname, some labels contain invalid characters');
         }
     }
